@@ -1,3 +1,28 @@
+# uh i need documentation
+
+## libraries
+
+```sh
+npx shadcn-ui@latest init
+```
+
+- add components
+
+```sh
+npx shadcn-ui@latest add button
+npx shadcn-ui@latest add dropdown-menu
+npx shadcn-ui@latest add form input
+```
+
+also interesting
+
+```sh
+npx shadcn-ui@latest add select
+npx shadcn-ui@latest add toast
+npx shadcn-ui@latest add badge separator card
+npx shadcn-ui@latest add skeleton
+```
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started

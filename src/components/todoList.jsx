@@ -8,7 +8,7 @@ import {
   filterDone,
   filterNotDone,
 } from '@/lib/features/todos/todosSlice.jsx'
-import TodoItem from '@components/TodoItem'
+import TodoItem from './TodoItem'
 const TodoList = () => {
   const dispatch = useDispatch()
   const newTodo = useSelector((state) => state.todoState.newTodo)
