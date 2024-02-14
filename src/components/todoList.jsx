@@ -10,6 +10,7 @@ import {
   filterNotDone,
 } from '@/lib/features/todos/todosSlice.jsx'
 import TodoItem from './TodoItem'
+import { Button } from './ui/button'
 const TodoList = () => {
   const dispatch = useDispatch()
   const newTodo = useSelector((state) => state.todoState.newTodo)
@@ -42,9 +43,9 @@ const TodoList = () => {
         value={newTodo}
         onChange={(e) => setNewTodoDispatch(e.target.value)}
       />
-      <button onClick={handleAddTodo}>Add</button>
-      <button onClick={() => dispatch(filterDone())}>Filter Done</button>
-      <button onClick={() => dispatch(filterNotDone())}>Filter Not Done</button>
+      <Button onClick={handleAddTodo}>Add</Button>
+      <Button onClick={() => dispatch(filterDone())}>Filter Done</Button>
+      <Button onClick={() => dispatch(filterNotDone())}>Filter Not Done</Button>
 
       {todos.map((todo) => (
         <TodoItem
