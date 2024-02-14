@@ -2,6 +2,7 @@
 import { useSelector, useDispatch } from 'react-redux'
 
 import {
+  setNewTodo,
   addTodo,
   toggleDone,
   deleteTodo,
@@ -14,9 +15,8 @@ const TodoList = () => {
   const newTodo = useSelector((state) => state.todoState.newTodo)
   const todos = useSelector((state) => state.todoState.todos)
 
-  const setNewTodoDispatch = (title, id) => {
-    dispatch(addTodo({ title, id }))
-  }
+  console.log(newTodo)
+  console.log(todos)
 
   const toggleDoneDispatch = (id) => {
     dispatch(toggleDone(id))
@@ -29,9 +29,12 @@ const TodoList = () => {
   const handleAddTodo = () => {
     // Assuming you have a way to generate unique IDs
     const id = new Date().getTime()
-    setNewTodoDispatch(newTodo, id)
-  }
 
+    dispatch(addTodo({ title: newTodo, id }))
+  }
+  const setNewTodoDispatch = (value) => {
+    dispatch(setNewTodo(value))
+  }
   return (
     <div>
       <input

@@ -16,6 +16,9 @@ const stateSlice = createSlice({
         todo.id === id ? { ...todo, done: !todo.done } : todo
       )
     },
+    setNewTodo: (state, action) => {
+      state.newTodo = action.payload
+    },
 
     addTodo: (state, action) => {
       console.log('addTodo')
@@ -42,7 +45,13 @@ const stateSlice = createSlice({
   },
 })
 
-export const { toggleDone, addTodo, deleteTodo, filterDone, filterNotDone } =
-  stateSlice.actions
+export const {
+  setNewTodo,
+  toggleDone,
+  addTodo,
+  deleteTodo,
+  filterDone,
+  filterNotDone,
+} = stateSlice.actions
 
 export default stateSlice.reducer
