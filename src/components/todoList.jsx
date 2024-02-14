@@ -11,6 +11,7 @@ import {
 } from '@/lib/features/todos/todosSlice.jsx'
 import TodoItem from './TodoItem'
 import { Button } from './ui/button'
+import { Input } from './ui/input'
 const TodoList = () => {
   const dispatch = useDispatch()
   const newTodo = useSelector((state) => state.todoState.newTodo)
@@ -38,23 +39,29 @@ const TodoList = () => {
   }
   return (
     <div>
-      <input
+      <Input
+        className="bg-muted "
         type="text"
         value={newTodo}
         onChange={(e) => setNewTodoDispatch(e.target.value)}
       />
-      <Button onClick={handleAddTodo}>Add</Button>
-      <Button onClick={() => dispatch(filterDone())}>Filter Done</Button>
-      <Button onClick={() => dispatch(filterNotDone())}>Filter Not Done</Button>
-
-      {todos.map((todo) => (
-        <TodoItem
-          key={todo.id}
-          todo={todo}
-          toggleDone={() => toggleDoneDispatch(todo.id)}
-          deleteTodo={() => deleteTodoDispatch(todo.id)}
-        />
-      ))}
+      <div>
+        <Button onClick={handleAddTodo}>Add</Button>
+        <Button onClick={() => dispatch(filterDone())}>Filter Done</Button>
+        <Button onClick={() => dispatch(filterNotDone())}>
+          Filter Not Done
+        </Button>
+      </div>
+      <div className="flex flex-col-reverse gap-y-2 my-2">
+        {todos.map((todo) => (
+          <TodoItem
+            key={todo.id}
+            todo={todo}
+            toggleDone={() => toggleDoneDispatch(todo.id)}
+            deleteTodo={() => deleteTodoDispatch(todo.id)}
+          />
+        ))}
+      </div>
     </div>
   )
 }

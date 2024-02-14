@@ -5,7 +5,7 @@ import { useEffect } from 'react'
 const ThemeContext = createContext()
 
 const getInitialDarkMode = () => {
-  return 'dark'
+  return 'red-200'
 }
 
 const initialState = {
