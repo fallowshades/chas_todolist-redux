@@ -1,8 +1,10 @@
-import _app from './_app'
+'use client'
+import StoreProvider from './StoreProvider'
+import TodoList from '@/components/TodoList'
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <_app />
-    </main>
+    <StoreProvider>
+      <TodoList />
+    </StoreProvider>
   )
 }
